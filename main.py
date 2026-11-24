@@ -20,6 +20,7 @@ def main() -> None:
     text = JOKE.strip()
     assert 1 <= len(text) <= 200, f"joke is {len(text)} characters"
     assert text.strip(), "joke must not be only whitespace"
+    assert "\n" not in text, "joke must be a single line"
     (out_dir / "entry.txt").write_text(text, encoding="utf-8")
 
 
